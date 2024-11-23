@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/bookmark.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  
+    <header class="">
+        <div class="container py-5 text-center d-flex justify-content-center">
+            <h1>Bookmarker</h1>
+        </div>
+        <div class=" container my-class d-flex justify-content-center py-3 flex-wrap">
+            <h2 class="w-100 text-center py-3">
+                <i class="fa-solid fa-bookmark"></i>
+                Bookmark your favorite sites
+                <i class="fa-solid fa-bookmark"></i>
+            </h2>
+            <div class="mb-3 w-100 py-2">
+                <label for="exampleInputName" class="form-label"><i class="fa-solid fa-book-bookmark pe-2"></i>Site Name</label>
+                <input type="text" class="form-control site-name" id="exampleInputName" aria-describedby="nameHelp" placeholder="Boomark Name">
+            </div>
+            <div class="mb-3 w-100 py-2">
+                <label for="exampleInputUrl" class="form-label"><i class="fa-solid fa-link pe-2"></i>Site URL</label>
+                <input type="url" class="form-control site-url" id="exampleInputUrl" aria-describedby="nameHelp" placeholder="Website URL">
+            </div>
+            <button onclick="addSite()" class="btn btn-submit px-5 py-2">Submit</button>
+        </div>
+        <div class="mb-3 w-100 py-2 container">
+          <label for="exampleInputSearch" class="form-label"><i class="fa-solid fa-magnifying-glass pe-2"></i>Search</label>
+          <input onkeyup="search(this.value)" type="text" class="form-control site-search" id="exampleInputSearch" aria-describedby="searchHelp" placeholder="Search">
+      </div>
+        <table class="table container my-3">
+            <thead class="text-center ">
+              <tr>
+                <th scope="col">Index</th>
+                <th scope="col">Website Name</th>
+                <th scope="col">Visit</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody class="text-center ">
+              <!-- <tr>
+                <th scope="row">1</th>
+                <td>Facebook</td>
+                <td><button class="btn btn-visit "><i class="fa-solid fa-eye pe-2"></i>Vist</button></td>
+                <td><button class="btn btn-warning"><i class="fa-solid fa-pen-to-square pe-2"></i>Update</button></td>
+                <td><button class="btn btn-danger "><i class="fa-solid fa-trash pe-2"></i>Delete</button></td>
+              </tr> -->
+               
+            </tbody>
+          </table>
+          
+    </header>
+    <div class="modal my-custom" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content py-4 ps-2">
+          <div class="modal-header  border-0">
+            <h5 class="modal-title"><div class="circls d-flex">
+              <span class="rounded-circle me-2"></span>
+              <span class="rounded-circle me-2"></span>
+              <span class="rounded-circle me-2"></span>
+            </div></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body pb-0 border-0">
+            <p class="fw-bolder fs-5">Site Name or Url is not valid, Please follow the rules below :</p>
+          </div>
+          <div class="modal-footer border-0">
+            <ol class="rules list-unstyled ms-0">
+              <li class="fs-5">
+                <i class="fa-regular fa-circle-right p-2"></i>Site name must
+                contain at least 3 characters
+              </li>
+              <li class="fs-5">
+                <i class="fa-regular fa-circle-right p-2"></i>Site URL must be a valid one
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
+
